@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task one </title>
+</head>
+<style>
+    /* Reset some browser defaults */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
+      padding: 20px;
+    }
+  
+    /* Marquee throwback, keepin' it groovy */
+    marquee {
+      font-weight: bold;
+      font-size: 24px;
+      padding: 10px 0;
+      color: #000;
+    }
+  
+    /* Center image */
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    /* Boxed sections */
+    .border-box {
+      border: 10px solid #000;
+      padding: 20px;
+      background-color: #fff;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+    }
+  
+    /* Table styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+  
+    th, td {
+      padding: 12px;
+      border: 1px solid #000;
+      text-align: center;
+    }
+  
+    th {
+      background-color: #333;
+      color: white;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  
+    tr:hover {
+      background-color: #d1e7fd;
+      transition: 0.3s;
+    }
+  
+    /* Video embeds responsive wrapper */
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+  
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  
+    h2 {
+      color: #00509d;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  
+
+  </style>
+  <style>
+    #musicToggle {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 9999;
+      padding: 8px 16px;
+      background-color: #2a9d8f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+
+
+
+    .movie-alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #111;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  z-index: 1000;
+  display: none;
+  animation: fadeInOut 4s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    top: 10px;
+  }
+  10% {
+    opacity: 1;
+    top: 20px;
+  }
+  90% {
+    opacity: 1;
+    top: 20px;
+  }
+  100% {
+    opacity: 0;
+    top: 10px;
+  }
+}
+
+
+#pickerButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #111;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 1001; /* Make sure it's on top of other elements */
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+#pickerButton:hover {
+  background-color: #444; /* Light up on hover */
+}
+
+#scrollToTopButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #111;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 1001;
+  border: none;
+  display: none; /* Hidden by default */
+}
+
+#scrollToTopButton.show {
+  display: block; /* Show when user scrolls down */
+}
+
+
+  </style>
+  
+  
+<body>
+    <marquee  direction="left" bgcolor="lightblue" width="100%"><h2> Wel Come To Action Drama Catalog!</h2></marquee>
+   <div  style="border: 10px solid black;padding: 10px ">
+    <img src="download.png" alt="blast-icon"class ="center" height="300px" >
+    <p>The action film is a film genre that predominantly features chase sequences, fights, shootouts, explosions, and stunt work. The specifics of what constitutes an action film has been in scholarly debate since the 1980s.</p>
+</div> 
+<div style="border: 10px solid black;padding: 20px">
+<h2>DO YOU KNOW ABOUT ACTION AND DRAMA ?</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OnS5sLclqqY?si=J4k43kOwnoHStuB5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p>Its got to be meticulously designed. Most of the bigger budget films now employ teams of previs artists who, a lot like Saul Bass (guy who designed Hitchcock's most memorable sequences and opening credits), plan every little detail out before a frame of film is shot. Action scenes are essentially suspense scenes.</p>
+</div>
+<div  style="border: 10px solid black;padding: 10px">
+    <marquee  direction="left" bgcolor="lightblue" width="100%"><h2> Best Action Movies Up To Now ?!</h2></marquee>
+    <table  border="1">
+        <tr>
+            <th>Industry</th>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Director</th>
+            <th>Budget</th>
+            <th>Collection</th>
+            <th>IMDb</th>
+        </tr>
+        <tr>
+            <td>Hollywod</td>
+            <td>Avatar</td>
+            <td>2009</td>
+            <td>James Cameron</td>
+            <td>$237 million</td>
+            <td>2.923 billion</td>
+            <td>7.9/10</td>
+        </tr>
+        <tr>
+            <td>Hollywod</td>
+            <td>Avengers:Endgame</td>
+            <td>2019</td>
+            <td>Anthony Russo,Joe Russo</td>
+            <td>$356-400million</td>
+            <td>2.799 billion</td>
+            <td>8.4/10</td>
+        </tr>
+        <tr>
+            <td>Tollywood</td>
+                <td>Baahubali:The Beginning</td>
+                <td>2015</td>
+                <td>S.S.Rajamouli</td>
+                <td>180 crores</td>
+                <td>650.12crores</td>
+                <td>8.0/10</td>
+            </tr>
+        <tr>
+        <td>Tollywood</td>
+            <td>RRR</td>
+            <td>2022</td>
+            <td>S.S.Rajamouli</td>
+            <td>550 crores</td>
+            <td>1387 crores</td>
+            <td>7.8/10</td>
+        </tr>
+        <tr>
+            <td>Bollywood</td>
+                <td>Krrish</td>
+                <td>2006</td>
+                <td>Rakesh Roshan</td>
+                <td>1.02 crores</td>
+                <td>120.6 crores</td>
+                <td>6.5/10</td>
+            </tr>
+        <tr>
+            <td>kollywood</td>
+                <td>7aum Arivu</td>
+                <td>2011</td>
+                <td>A.R.Murugadoss</td>
+                <td>80 crores</td>
+                <td>100 crores</td>
+                <td>6.6/10</td>
+            </tr>
+            <tr>
+            <td>kollywood</td>
+                <td>Vikram</td>
+                <td>2022</td>
+                <td>Lokesh Kanagaraj</td>
+                <td>120 crores</td>
+                <td>500 crores</td>
+                <td>8.3/10</td>
+            </tr>
+            <tr>
+            <td>Sandlewood</td>
+                <td>KGF-1</td>
+                <td>2018</td>
+                <td>Prashanth Neel</td>
+                <td>80 crores</td>
+                <td>250 crores</td>
+                <td>8.2/10</td>
+            </tr>
+            <tr>
+                <td>Sandlewood</td>
+                    <td>Kantara</td>
+                    <td>2022</td>
+                    <td>Rishab Shetty</td>
+                    <td>16 crores</td>
+                    <td>450 crores</td>
+                    <td>8.2/10</td>
+                </tr>
+    </table>
+    <h2> BEST ACTION SCENES</h2>
+<iframe width="250" height="315" src="https://www.youtube.com/embed/C3UK78--LPk?si=bZuhzvda-Ss3o_oE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="250" height="315" src="https://www.youtube.com/embed/b0fPciW_uco?si=3B1qJxFhXUQBqqzs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="250" height="315" src="https://www.youtube.com/embed/dhzjwuWCWu4?si=njZEm1XBRjiEUxen" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="250" height="315" src="https://www.youtube.com/embed/ULxbB6VTiLY?si=zwvArKtCXUiKH576" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="250" height="315" src="https://www.youtube.com/embed/8mReEFnl4ns?si=GiS3R4l-4Y5Inw8K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="250" height="315" src="https://www.youtube.com/embed/TlUtHEMDrxY?si=DOvSXKYKSKHGDS9C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+
+<body>
+  <audio controls>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+<button onclick="pickRandomMovie()" id="pickerButton">🎲 Pick a Random Movie</button>
+
+<div id="movieAlert" class="movie-alert">🎥 Movie Name Here</div>
+
+<button id="scrollToTopButton" onclick="scrollToTop()">⬆️ Back to Top</button>
+
+
+
+<script>
+  const movies = [
+    { name: "Avatar", director: "James Cameron", year: 2009 },
+    { name: "Avengers: Endgame", director: "Russo Brothers", year: 2019 },
+    { name: "The Dark Knight", director: "Christopher Nolan", year: 2008 },
+    { name: "Mad Max: Fury Road", director: "George Miller", year: 2015 },
+    { name: "Inception", director: "Christopher Nolan", year: 2010 },
+    { name: "Gladiator", director: "Ridley Scott", year: 2000 },
+    { name: "John Wick", director: "Chad Stahelski", year: 2014 },
+    { name: "Baahubali: The Beginning", director: "S.S. Rajamouli", year: 2015 },
+    { name: "RRR", director: "S.S. Rajamouli", year: 2022 },
+    { name: "Krrish", director: "Rakesh Roshan", year: 2006 },
+    { name: "Vikram", director: "Lokesh Kanagaraj", year: 2022 },
+    { name: "KGF Chapter 1", director: "Prashanth Neel", year: 2018 },
+    { name: "KGF Chapter 2", director: "Prashanth Neel", year: 2022 },
+    { name: "Kantara", director: "Rishab Shetty", year: 2022 },
+    { name: "Pushpa", director: "Sukumar", year: 2021 },
+    { name: "War", director: "Siddharth Anand", year: 2019 },
+    { name: "Pathaan", director: "Siddharth Anand", year: 2023 },
+    { name: "Shershaah", director: "Vishnuvardhan", year: 2021 },
+    { name: "Uri: The Surgical Strike", director: "Aditya Dhar", year: 2019 },
+    { name: "Singham", director: "Rohit Shetty", year: 2011 },
+    { name: "Sooryavanshi", director: "Rohit Shetty", year: 2021 },
+    { name: "Raees", director: "Rahul Dholakia", year: 2017 },
+    { name: "Don", director: "Farhan Akhtar", year: 2006 },
+    { name: "Ra.One", director: "Anubhav Sinha", year: 2011 },
+    { name: "Tiger Zinda Hai", director: "Ali Abbas Zafar", year: 2017 },
+    { name: "Ek Tha Tiger", director: "Kabir Khan", year: 2012 },
+    { name: "Dhoom 2", director: "Sanjay Gadhvi", year: 2006 },
+    { name: "Dhoom 3", director: "Vijay Krishna Acharya", year: 2013 },
+    { name: "Mission Mangal", director: "Jagan Shakti", year: 2019 },
+    { name: "Batla House", director: "Nikkhil Advani", year: 2019 },
+    { name: "Kesari", director: "Anurag Singh", year: 2019 },
+    { name: "Commando", director: "Dilip Ghosh", year: 2013 },
+    { name: "Baby", director: "Neeraj Pandey", year: 2015 },
+    { name: "Special 26", director: "Neeraj Pandey", year: 2013 },
+    { name: "Gabbar Is Back", director: "Krish", year: 2015 },
+    { name: "Sardar Udham", director: "Shoojit Sircar", year: 2021 },
+    { name: "Bhaag Milkha Bhaag", director: "Rakeysh Omprakash Mehra", year: 2013 },
+    { name: "Ghajini", director: "A.R. Murugadoss", year: 2008 },
+    { name: "7aum Arivu", director: "A.R. Murugadoss", year: 2011 },
+    { name: "Thuppakki", director: "A.R. Murugadoss", year: 2012 },
+    { name: "Sarkar", director: "A.R. Murugadoss", year: 2018 },
+    { name: "Mersal", director: "Atlee", year: 2017 },
+    { name: "Bigil", director: "Atlee", year: 2019 },
+    { name: "Master", director: "Lokesh Kanagaraj", year: 2021 },
+    { name: "Kaithi", director: "Lokesh Kanagaraj", year: 2019 },
+    { name: "Leo", director: "Lokesh Kanagaraj", year: 2023 },
+    { name: "Kabali", director: "Pa. Ranjith", year: 2016 },
+    { name: "Vada Chennai", director: "Vetrimaaran", year: 2018 },
+    { name: "Asuran", director: "Vetrimaaran", year: 2019 },
+    { name: "Aayirathil Oruvan", director: "Selvaraghavan", year: 2010 },
+    { name: "Aaranya Kaandam", director: "Thiagarajan Kumararaja", year: 2011 },
+    // 50 done, adding 50 more below...
+    { name: "Sye", director: "S.S. Rajamouli", year: 2004 },
+    { name: "Magadheera", director: "S.S. Rajamouli", year: 2009 },
+    { name: "Eega", director: "S.S. Rajamouli", year: 2012 },
+    { name: "Aravinda Sametha", director: "Trivikram Srinivas", year: 2018 },
+    { name: "Ala Vaikunthapurramuloo", director: "Trivikram Srinivas", year: 2020 },
+    { name: "DJ", director: "Harish Shankar", year: 2017 },
+    { name: "Gabbar Singh", director: "Harish Shankar", year: 2012 },
+    { name: "Businessman", director: "Puri Jagannadh", year: 2012 },
+    { name: "Temper", director: "Puri Jagannadh", year: 2015 },
+    { name: "Pokiri", director: "Puri Jagannadh", year: 2006 },
+    { name: "Nenokkadine", director: "Sukumar", year: 2014 },
+    { name: "Spyder", director: "A.R. Murugadoss", year: 2017 },
+    { name: "Sarrainodu", director: "Boyapati Srinu", year: 2016 },
+    { name: "Legend", director: "Boyapati Srinu", year: 2014 },
+    { name: "Simha", director: "Boyapati Srinu", year: 2010 },
+    { name: "Jai Lava Kusa", director: "K.S. Ravindra", year: 2017 },
+    { name: "Janatha Garage", director: "Koratala Siva", year: 2016 },
+    { name: "Mirchi", director: "Koratala Siva", year: 2013 },
+    { name: "Srimanthudu", director: "Koratala Siva", year: 2015 },
+    { name: "Salaar", director: "Prashanth Neel", year: 2023 },
+    { name: "Ugramm", director: "Prashanth Neel", year: 2014 },
+    { name: "James", director: "Chethan Kumar", year: 2022 },
+    { name: "Lucifer", director: "Prithviraj Sukumaran", year: 2019 },
+    { name: "Kurup", director: "Srinath Rajendran", year: 2021 },
+    { name: "Minnal Murali", director: "Basil Joseph", year: 2021 },
+    { name: "Odiyan", director: "V. A. Shrikumar Menon", year: 2018 },
+    { name: "Iru Mugan", director: "Anand Shankar", year: 2016 },
+    { name: "Anjaan", director: "N. Lingusamy", year: 2014 },
+    { name: "Dhruva", director: "Surender Reddy", year: 2016 },
+    { name: "Kick", director: "Surender Reddy", year: 2009 },
+    { name: "Race Gurram", director: "Surender Reddy", year: 2014 },
+    { name: "Vedalam", director: "Siva", year: 2015 },
+    { name: "Viswasam", director: "Siva", year: 2019 },
+    { name: "Vivegam", director: "Siva", year: 2017 },
+    { name: "Billa", director: "Vishnuvardhan", year: 2007 },
+    { name: "Aegan", director: "Raju Sundaram", year: 2008 },
+    { name: "Ayan", director: "K. V. Anand", year: 2009 },
+    { name: "Ko", director: "K. V. Anand", year: 2011 },
+    { name: "Rangasthalam", director: "Sukumar", year: 2018 },
+    { name: "Dhruva Natchathiram", director: "Gautham Menon", year: 2023 },
+    { name: "Yennai Arindhaal", director: "Gautham Menon", year: 2015 },
+    { name: "Vaaranam Aayiram", director: "Gautham Menon", year: 2008 },
+    { name: "Kaaka Kaaka", director: "Gautham Menon", year: 2003 },
+    { name: "Aparichit", director: "S. Shankar", year: 2005 },
+    { name: "I", director: "S. Shankar", year: 2015 },
+    { name: "2.0", director: "S. Shankar", year: 2018 },
+    { name: "Robot", director: "S. Shankar", year: 2010 },
+    { name: "Indian", director: "S. Shankar", year: 1996 },
+    { name: "Indian 2", director: "S. Shankar", year: 2024 },
+    { name: "Dasavathaaram", director: "K. S. Ravikumar", year: 2008 }
+  ];
+
+  function pickRandomMovie() {
+  const randomIndex = Math.floor(Math.random() * movies.length);
+  const movie = movies[randomIndex];
+  const message = `🎥 "${movie.name}" directed by ${movie.director} (${movie.year})`;
+
+  const alertBox = document.getElementById("movieAlert");
+  alertBox.textContent = message;
+  alertBox.style.display = "block";
+  alertBox.style.animation = "none"; // Reset animation
+  void alertBox.offsetWidth; // Trigger reflow
+  alertBox.style.animation = "fadeInOut 4s ease-in-out forwards";
+}
+</script>
+<script>
+  // Show the button when scrolling down
+window.onscroll = function () {
+  const button = document.getElementById("scrollToTopButton");
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    button.classList.add("show");
+  } else {
+    button.classList.remove("show");
+  }
+};
+
+// Scroll to the top when clicked
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+</script>
+</body>
+</html>

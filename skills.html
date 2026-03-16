@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skills — Vinay Avala</title>
+
+  <meta name="description" content="Technical skills and expertise of Vinay Avala — Fullstack Developer." />
+  
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #FF6B35;
+      --secondary: #F7931E;
+      --accent: #00D9FF;
+      --dark: #0A0E27;
+      --darker: #050814;
+      --text: #E8E8F0;
+      --muted: #9BA4B5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--darker);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* Background */
+    .bg-gradient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: 
+        radial-gradient(circle at 30% 20%, rgba(255, 107, 53, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(0, 217, 255, 0.12) 0%, transparent 50%),
+        var(--darker);
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1.5rem 5%;
+      background: rgba(10, 14, 39, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    /* Skills Section */
+    .skills-section {
+      padding: 150px 5% 80px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 5rem;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .section-badge {
+      display: inline-block;
+      background: rgba(255, 107, 53, 0.1);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 1.2rem;
+    }
+
+    /* Skill Categories */
+    .skill-category {
+      margin-bottom: 5rem;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeInLeft 0.8s ease forwards;
+    }
+
+    .category-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .category-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    /* Skill Cards Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-card {
+      background: linear-gradient(145deg, rgba(255, 107, 53, 0.05), rgba(0, 217, 255, 0.05));
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .skill-card:hover::before {
+      left: 100%;
+    }
+
+    .skill-card:nth-child(1) { animation-delay: 0.1s; }
+    .skill-card:nth-child(2) { animation-delay: 0.2s; }
+    .skill-card:nth-child(3) { animation-delay: 0.3s; }
+    .skill-card:nth-child(4) { animation-delay: 0.4s; }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary);
+      box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+    }
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-name {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .skill-icon {
+      font-size: 2rem;
+      color: var(--accent);
+    }
+
+    .skill-level {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .skill-bar-container {
+      background: rgba(255, 255, 255, 0.05);
+      height: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 0.8rem;
+    }
+
+    .skill-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 10px;
+      transition: width 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      width: 0;
+      box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+    }
+
+    .skill-card:hover .skill-bar {
+      animation: pulse 1.5s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
+      }
+    }
+
+    .skill-description {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Tools Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .tool-card {
+      background: rgba(0, 217, 255, 0.05);
+      border: 1px solid rgba(0, 217, 255, 0.2);
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .tool-card:nth-child(1) { animation-delay: 0.1s; }
+    .tool-card:nth-child(2) { animation-delay: 0.15s; }
+    .tool-card:nth-child(3) { animation-delay: 0.2s; }
+    .tool-card:nth-child(4) { animation-delay: 0.25s; }
+    .tool-card:nth-child(5) { animation-delay: 0.3s; }
+    .tool-card:nth-child(6) { animation-delay: 0.35s; }
+
+    .tool-card:hover {
+      transform: translateY(-5px) rotate(2deg);
+      border-color: var(--accent);
+      background: rgba(0, 217, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+    }
+
+    .tool-card i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .tool-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    /* Certifications */
+    .certifications {
+      margin-top: 5rem;
+      padding: 3rem;
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(0, 217, 255, 0.05));
+      border-radius: 25px;
+      border: 1px solid rgba(255, 107, 53, 0.2);
+    }
+
+    .cert-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .cert-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .cert-card {
+      background: rgba(10, 14, 39, 0.6);
+      border: 1px solid rgba(255, 107, 53, 0.3);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      box-shadow: 0 15px 35px rgba(255, 107, 53, 0.2);
+    }
+
+    .cert-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .cert-issuer {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .section-title {
+        font-size: 2.5rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-gradient"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">VA</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.pdf" class="cta-button" download><i class="fas fa-download"></i> Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Skills Section -->
+  <section class="skills-section">
+    <div class="section-header">
+      <div class="section-badge">
+        <i class="fas fa-code"></i> Technical Expertise
+      </div>
+      <h1 class="section-title">
+        My <span class="gradient-text">Skill Set</span>
+      </h1>
+      <p class="section-subtitle">
+        A comprehensive overview of my technical capabilities and expertise
+      </p>
+    </div>
+
+    <!-- Frontend Skills -->
+    <div class="skill-category">
+      <div class="category-header">
+        <div class="category-icon">
+          <i class="fas fa-palette"></i>
+        </div>
+        <h2>Frontend Development</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-name">
+              <i class="fab fa-react skill-icon"></i>
+              <span>React</span>
+            </div>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-level="90"></div>
+          </div>
+          <p class="skill-description">
+            Component-based architecture, hooks, state management, and modern React patterns.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-name">
+              <i class="fab fa-js skill-icon"></i>
+              <span>JavaScript</span>
+            </div>
+            <span class="skill-level">Expert</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-level="95"></div>
+          </div>
+          <p class="skill-description">
+            ES6+, async/await, DOM manipulation, and modern JavaScript frameworks.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-name">
+              <i class="fab fa-html5 skill-icon"></i>
+              <span>HTML/CSS</span>
+            </div>
+            <span class="skill-level">Expert</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-level="95"></div>
+          </div>
+          <p class="skill-description">
+            Semantic HTML, responsive design, CSS Grid, Flexbox, and animations.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-name">
+              <i class="fab fa-bootstrap skill-icon"></i>
+              <span>Tailwind CSS</span>
+            </div>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-level="85"></div>
+          </div>
+          <p class="skill-description">
+            Utility-first CSS framework for rapid UI development and prototyping.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backend Skills -->
+    <div class="skill-category">
+      <div class="category-header" style="animation-delay: 0.2s;">
+        <div class="category-icon" style="background: linear-gradient(135deg, var(--accent), #0099CC);">
+          <i class="fas fa-server"></i>
+        </div>
+        <h2>Backend Development</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-name">
+              <i class="fab fa-node-js skill-icon"></i>
+              <span>Node.js</span>
+            </div>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-level="88"></div>
+          </div>
+          <p class="skill-description">
+            Express.js, RESTful APIs, middleware, and server-side JavaScript.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-name">
+              <i class="fab fa-php skill-icon"></i>
+              <span>PHP</span>
+            </div>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-level="85"></div>
+          </div>
+          <p class="skill-description">
+            LAMP stack development, authentication, sessions, and CRUD operations.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-name">
+              <i class="fas fa-database skill-icon"></i>
+              <span>MongoDB</span>
+            </div>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-level="82"></div>
+          </div>
+          <p class="skill-description">
+            NoSQL database design, aggregation pipelines, and Mongoose ODM.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-name">
+              <i class="fas fa-database skill-icon"></i>
+              <span>MySQL</span>
+            </div>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-level="85"></div>
+          </div>
+          <p class="skill-description">
+            Relational database design, complex queries, joins, and optimization.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI/ML Skills -->
+    <div class="skill-category">
+      <div class="category-header" style="animation-delay: 0.3s;">
+        <div class="category-icon" style="background: linear-gradient(135deg, #9D4EDD, #7B2CBF);">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h2>AI & Machine Learning</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-name">
+              <i class="fab fa-python skill-icon"></i>
+              <span>Python</span>
+            </div>
+            <span class="skill-level">Intermediate</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-level="75"></div>
+          </div>
+          <p class="skill-description">
+            Data analysis, ML libraries, automation, and scripting.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-name">
+              <i class="fas fa-robot skill-icon"></i>
+              <span>TensorFlow</span>
+            </div>
+            <span class="skill-level">Intermediate</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-level="70"></div>
+          </div>
+          <p class="skill-description">
+            Neural networks, model training, and AI-driven applications.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tools & Technologies -->
+    <div class="skill-category">
+      <div class="category-header" style="animation-delay: 0.4s;">
+        <div class="category-icon" style="background: linear-gradient(135deg, #06D6A0, #118AB2);">
+          <i class="fas fa-tools"></i>
+        </div>
+        <h2>Tools & Technologies</h2>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card">
+          <i class="fab fa-git-alt"></i>
+          <h4>Git</h4>
+        </div>
+        <div class="tool-card">
+          <i class="fab fa-github"></i>
+          <h4>GitHub</h4>
+        </div>
+        <div class="tool-card">
+          <i class="fab fa-docker"></i>
+          <h4>Docker</h4>
+        </div>
+        <div class="tool-card">
+          <i class="fas fa-terminal"></i>
+          <h4>CLI</h4>
+        </div>
+        <div class="tool-card">
+          <i class="fab fa-aws"></i>
+          <h4>AWS</h4>
+        </div>
+        <div class="tool-card">
+          <i class="fas fa-cloud"></i>
+          <h4>Cloud Computing</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="certifications">
+      <div class="cert-header">
+        <h2><span class="gradient-text">Continuous Learning</span></h2>
+        <p style="color: var(--muted);">Always expanding my knowledge and staying current with industry trends</p>
+      </div>
+
+      <div style="text-align: center;">
+        <p style="color: var(--muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+          Currently pursuing certifications in Cloud Computing, Advanced React Patterns, and AI/ML 
+          to further enhance my technical expertise and deliver cutting-edge solutions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Animate skill bars on scroll
+    const skillBars = document.querySelectorAll('.skill-bar');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const level = entry.target.getAttribute('data-level');
+          entry.target.style.width = level + '%';
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    skillBars.forEach(bar => observer.observe(bar));
+  </script>
+</body>
+</html>

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Vinay Avala</title>
+
+  <meta name="description" content="Portfolio projects by Vinay Avala — Full stack, MERN, LAMP, and AI applications." />
+  
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #FF6B35;
+      --secondary: #F7931E;
+      --accent: #00D9FF;
+      --dark: #0A0E27;
+      --darker: #050814;
+      --text: #E8E8F0;
+      --muted: #9BA4B5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--darker);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* Background */
+    .bg-gradient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(255, 107, 53, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 217, 255, 0.15) 0%, transparent 40%),
+        var(--darker);
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1.5rem 5%;
+      background: rgba(10, 14, 39, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    /* Projects Section */
+    .projects-section {
+      padding: 150px 5% 80px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .section-badge {
+      display: inline-block;
+      background: rgba(255, 107, 53, 0.1);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Filter Tabs */
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 2px solid rgba(255, 107, 53, 0.3);
+      color: var(--text);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .project-card {
+      position: relative;
+      background: linear-gradient(145deg, rgba(255, 107, 53, 0.05), rgba(0, 217, 255, 0.05));
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-radius: 25px;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .project-card:nth-child(1) { animation-delay: 0.1s; }
+    .project-card:nth-child(2) { animation-delay: 0.2s; }
+    .project-card:nth-child(3) { animation-delay: 0.3s; }
+    .project-card:nth-child(4) { animation-delay: 0.4s; }
+    .project-card:nth-child(5) { animation-delay: 0.5s; }
+    .project-card:nth-child(6) { animation-delay: 0.6s; }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 0;
+    }
+
+    .project-card:hover::before {
+      opacity: 0.1;
+    }
+
+    .project-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(255, 107, 53, 0.3);
+      border-color: var(--primary);
+    }
+
+    .project-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-icon {
+      transform: rotate(10deg) scale(1.1);
+    }
+
+    .project-content {
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-label {
+      display: inline-block;
+      background: rgba(0, 217, 255, 0.1);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .project-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .project-description {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.4rem 1rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover .tech-tag {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .project-link {
+      flex: 1;
+      text-align: center;
+      padding: 0.8rem;
+      border-radius: 15px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .link-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+    }
+
+    .link-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+    }
+
+    .link-secondary {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .link-secondary:hover {
+      background: var(--accent);
+      color: var(--dark);
+    }
+
+    /* Featured Project */
+    .featured-project {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      padding: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      color: var(--dark);
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-project {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .filter-tabs {
+        gap: 0.5rem;
+      }
+
+      .filter-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-gradient"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">VA</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.pdf" class="cta-button" download><i class="fas fa-download"></i> Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Projects Section -->
+  <section class="projects-section">
+    <div class="section-header">
+      <div class="section-badge">
+        <i class="fas fa-briefcase"></i> My Work
+      </div>
+      <h1 class="section-title">
+        Featured <span class="gradient-text">Projects</span>
+      </h1>
+      <p class="section-subtitle">
+        A collection of real-world applications showcasing full-stack development, 
+        AI integration, and problem-solving through code.
+      </p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs">
+      <button class="filter-btn active">All Projects</button>
+      <button class="filter-btn">MERN Stack</button>
+      <button class="filter-btn">LAMP Stack</button>
+      <button class="filter-btn">AI/ML</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      
+      <!-- Featured Project -->
+      <div class="project-card featured-project">
+        <div class="featured-badge">
+          <i class="fas fa-star"></i> Featured
+        </div>
+        <div class="project-icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <div class="project-content">
+          <div class="project-label">AI-Powered</div>
+          <h2 class="project-title">Parallel Self Simulator</h2>
+          <p class="project-description">
+            An innovative AI-driven simulation system that models alternative life paths based on 
+            user decisions. Uses probabilistic reasoning and behavioral modeling to explore possible 
+            futures while maintaining transparency about uncertainty.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">AI/ML</span>
+            <span class="tech-tag">MongoDB</span>
+          </div>
+        </div>
+        <div class="project-links" style="align-self: end;">
+          <a href="https://liflect.vercel.app/" target="_blank" class="project-link link-primary">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+          <a href="parallel-self.html" class="project-link link-secondary">
+            <i class="fas fa-info-circle"></i> Case Study
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Card 1 -->
+      <div class="project-card">
+        <div class="project-icon">
+          <i class="fas fa-wallet"></i>
+        </div>
+        <div class="project-content">
+          <div class="project-label">Finance</div>
+          <h3 class="project-title">SpendingPartner</h3>
+          <p class="project-description">
+            Smart expense tracking app that goes beyond logging—analyzes spending patterns 
+            and provides insights to detect unhealthy financial habits early.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://spendingpartner.ct.ws/" target="_blank" class="project-link link-primary">
+              <i class="fas fa-external-link-alt"></i> Live
+            </a>
+            <a href="spendingpartner.html" class="project-link link-secondary">
+              <i class="fas fa-book"></i> Details
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="project-card">
+        <div class="project-icon">
+          <i class="fas fa-utensils"></i>
+        </div>
+        <div class="project-content">
+          <div class="project-label">Full Stack</div>
+          <h3 class="project-title">SnackSprint</h3>
+          <p class="project-description">
+            Complete MERN-based food ordering platform with authentication, real-time updates, 
+            and seamless order management workflows.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Express</span>
+          </div>
+          <div class="project-links">
+            <a href="https://dashboard-snack-react-9n0k99ivt-vinay-avalas-projects.vercel.app/" target="_blank" class="project-link link-primary">
+              <i class="fas fa-external-link-alt"></i> Live
+            </a>
+            <a href="snacksprint.html" class="project-link link-secondary">
+              <i class="fas fa-book"></i> Details
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="project-card">
+        <div class="project-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="project-content">
+          <div class="project-label">AI Security</div>
+          <h3 class="project-title">UserAuthSense</h3>
+          <p class="project-description">
+            AI-enhanced authentication system using behavioral biometrics to detect suspicious 
+            login patterns and prevent unauthorized access.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">Machine Learning</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/VinayWeb-create" target="_blank" class="project-link link-primary">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="userauthsense.html" class="project-link link-secondary">
+              <i class="fas fa-book"></i> Details
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 4 -->
+      <div class="project-card">
+        <div class="project-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="project-content">
+          <div class="project-label">Education</div>
+          <h3 class="project-title">Placement Prep Platform</h3>
+          <p class="project-description">
+            Comprehensive placement preparation system with CRT practice, technical MCQs, 
+            company-specific resources, and AI-assisted learning.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Tailwind CSS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://placemint.ct.ws/?i=2" target="_blank" class="project-link link-primary">
+              <i class="fas fa-external-link-alt"></i> Live
+            </a>
+            <a href="placemint.html" class="project-link link-secondary">
+              <i class="fas fa-book"></i> Details
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 5 -->
+      <div class="project-card">
+        <div class="project-icon">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div class="project-content">
+          <div class="project-label">Health</div>
+          <h3 class="project-title">Health Tracker</h3>
+          <p class="project-description">
+            Lightweight health tracking application for monitoring daily habits with 
+            simplicity and consistency at its core.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="http://healthtracker.ct.ws" target="_blank" class="project-link link-primary">
+              <i class="fas fa-external-link-alt"></i> Live
+            </a>
+            <a href="healthtracker.html" class="project-link link-secondary">
+              <i class="fas fa-book"></i> Details
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align: center; margin-top: 4rem;">
+      <a href="https://github.com/VinayWeb-create" target="_blank" style="
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        padding: 1.2rem 3rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+      " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 40px rgba(255, 107, 53, 0.5)'" 
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(255, 107, 53, 0.3)'">
+        <i class="fab fa-github" style="font-size: 1.3rem;"></i>
+        View More on GitHub
+      </a>
+    </div>
+  </section>
+
+  <script>
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Add your filter logic here
+        // For now, all projects remain visible
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const cards = document.querySelectorAll('.project-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>

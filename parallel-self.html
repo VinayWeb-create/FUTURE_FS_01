@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parallel Self Simulator — AI Case Study | Vinay Avala</title>
+  <meta name="description" content="Parallel Self Simulator — an AI-driven system that simulates alternative life paths based on user decisions and behavioral modeling." />
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <style>
+    :root{--primary:#FF6B35;--secondary:#F7931E;--accent:#00D9FF;--dark:#0A0E27;--darker:#050814;--text:#E8E8F0;--muted:#9BA4B5}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--darker);color:var(--text);line-height:1.8;overflow-x:hidden}.bg-gradient{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background:radial-gradient(circle at 15% 30%,rgba(255,107,53,.15) 0%,transparent 50%),radial-gradient(circle at 85% 70%,rgba(0,217,255,.15) 0%,transparent 50%),var(--darker)}nav{position:sticky;top:0;background:rgba(10,14,39,.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,107,53,.25);z-index:1000;padding:1.2rem 5%}nav .container{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center}.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}nav a{color:var(--text);text-decoration:none;margin-left:2rem;font-weight:600;transition:color .3s}nav a:hover{color:var(--accent)}main{max-width:1000px;margin:100px auto 80px;padding:0 5%}.hero-section{margin-bottom:5rem;text-align:center;opacity:0;animation:fadeInUp 1s ease forwards}.project-icon{width:100px;height:100px;background:linear-gradient(135deg,#9D4EDD,#7B2CBF);border-radius:25px;display:inline-flex;align-items:center;justify-content:center;font-size:3rem;color:white;margin-bottom:2rem;box-shadow:0 20px 40px rgba(157,78,221,.3)}h1{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:900;margin-bottom:1.5rem;line-height:1.2}.gradient-text{background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.hero-description{font-size:1.3rem;color:var(--muted);max-width:800px;margin:0 auto 2rem}.tags{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}.tag{background:rgba(157,78,221,.1);border:1px solid rgba(157,78,221,.3);color:#9D4EDD;padding:.6rem 1.5rem;border-radius:25px;font-size:.9rem;font-weight:600}.cta-buttons{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}.btn{padding:1rem 2.5rem;border-radius:50px;font-weight:700;text-decoration:none;transition:all .3s ease;display:inline-flex;align-items:center;gap:.8rem}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;box-shadow:0 10px 30px rgba(255,107,53,.3)}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(255,107,53,.5)}.btn-secondary{background:transparent;border:2px solid var(--accent);color:var(--accent)}.btn-secondary:hover{background:var(--accent);color:var(--dark);transform:translateY(-3px)}section{margin-bottom:4rem;background:linear-gradient(145deg,rgba(157,78,221,.05),rgba(0,217,255,.05));backdrop-filter:blur(14px);border:1px solid rgba(157,78,221,.2);border-radius:25px;padding:3rem;box-shadow:0 20px 60px rgba(0,0,0,.4);opacity:0;animation:fadeInUp 1s ease forwards}section:nth-child(2){animation-delay:.1s}section:nth-child(3){animation-delay:.2s}section:nth-child(4){animation-delay:.3s}section:nth-child(5){animation-delay:.4s}section:nth-child(6){animation-delay:.5s}section:nth-child(7){animation-delay:.6s}section:nth-child(8){animation-delay:.7s}section:nth-child(9){animation-delay:.8s}section:nth-child(10){animation-delay:.9s}h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;margin-bottom:1.5rem;color:var(--accent)}p{color:var(--muted);margin-bottom:1.2rem;font-size:1.05rem}strong{color:var(--text);font-weight:700}ul{list-style:none;padding:0}ul li{padding:.8rem 0;padding-left:2rem;position:relative;color:var(--muted)}ul li::before{content:'→';position:absolute;left:0;color:var(--primary);font-weight:700}.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:2rem}.tech-item{background:rgba(10,14,39,.5);padding:1.5rem;border-radius:15px;border:1px solid rgba(255,255,255,.1);transition:all .3s ease}.tech-item:hover{border-color:var(--accent);transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,217,255,.2)}.tech-label{color:var(--accent);font-weight:700;font-size:.9rem;margin-bottom:.5rem}footer{text-align:center;color:var(--muted);padding:2rem;background:rgba(10,14,39,.8);margin-top:5rem}@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@media(max-width:768px){h1{font-size:2.5rem}.hero-description{font-size:1.1rem}section{padding:2rem}nav a:not(:first-child){display:none}}
+  </style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <nav>
+    <div class="container">
+      <div class="logo">VA</div>
+      <div><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div>
+    </div>
+  </nav>
+  <main>
+    <div class="hero-section">
+      <div class="project-icon"><i class="fas fa-brain"></i></div>
+      <h1>Parallel Self Simulator <span class="gradient-text">AI Case Study</span></h1>
+      <p class="hero-description">An AI-driven simulation system that explores how different life decisions can lead to different long-term outcomes — without pretending to predict the future.</p>
+      <div class="tags">
+        <span class="tag">AI/ML</span><span class="tag">Simulation</span><span class="tag">Behavioral Modeling</span><span class="tag">MERN Stack</span>
+      </div>
+      <div class="cta-buttons">
+        <a href="https://liflect.vercel.app/" target="_blank" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> View Live Demo</a>
+        <a href="projects.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+      </div>
+    </div>
+    <section>
+      <h2>Problem Statement</h2>
+      <p>People frequently wonder how alternative decisions might have shaped their lives, yet most applications only react to the present.</p>
+      <p>There are very few systems that explore <strong>possible futures</strong> while clearly communicating uncertainty and limitations—most either oversimplify or make deterministic predictions that can mislead users.</p>
+    </section>
+    <section>
+      <h2>Core Innovation</h2>
+      <p>Parallel Self Simulator models multiple possible future paths based on user decisions, habits, and behavioral signals.</p>
+      <p>Each simulated path represents a <strong>plausible trajectory</strong>, not a guaranteed outcome. The system emphasizes probabilistic thinking and explicitly communicates uncertainty to build user trust.</p>
+    </section>
+    <section>
+      <h2>System Architecture</h2>
+      <p>User inputs such as goals, decisions, and lifestyle preferences are processed by an AI-driven inference layer using rule-based logic and probabilistic modeling.</p>
+      <p>The system generates scenario-based outcomes across timelines, which are visualized as narrative life snapshots on the frontend, allowing users to explore "what if" scenarios in an engaging way.</p>
+    </section>
+    <section>
+      <h2>Tech Stack & Design</h2>
+      <div class="tech-grid">
+        <div class="tech-item"><div class="tech-label">Frontend</div><p style="margin:0">React — Interactive simulation UI</p></div>
+        <div class="tech-item"><div class="tech-label">Backend</div><p style="margin:0">Node.js & Express — Simulation APIs</p></div>
+        <div class="tech-item"><div class="tech-label">AI Logic</div><p style="margin:0">Rule-based + probabilistic modeling</p></div>
+        <div class="tech-item"><div class="tech-label">Data</div><p style="margin:0">User decisions & behavioral attributes</p></div>
+      </div>
+    </section>
+    <section>
+      <h2>Key Features</h2>
+      <ul>
+        <li>Multiple parallel life simulations with branching scenarios</li>
+        <li>Decision-based outcome modeling with uncertainty quantification</li>
+        <li>Timeline-style future snapshots visualized as narratives</li>
+        <li>Side-by-side comparison of different life choices</li>
+        <li>Transparent communication about AI limitations</li>
+        <li>Privacy-first design with no personal data retention</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Challenges & Solutions</h2>
+      <p><strong>Challenge:</strong> Modeling long-term outcomes with limited data</p>
+      <p><strong>Solution:</strong> Used scenario-based and probabilistic reasoning instead of deterministic predictions</p>
+      <p style="margin-top:1.5rem"><strong>Challenge:</strong> Avoiding misleading or overly deterministic predictions</p>
+      <p><strong>Solution:</strong> Clearly framed outputs as exploratory simulations with explicit uncertainty markers</p>
+      <p style="margin-top:1.5rem"><strong>Challenge:</strong> Balancing realism with user motivation</p>
+      <p><strong>Solution:</strong> Focused on trends and possibilities rather than exact predictions</p>
+      <p style="margin-top:1.5rem"><strong>Challenge:</strong> Preventing overtrust in AI outputs</p>
+      <p><strong>Solution:</strong> Added transparency disclaimers and educational content about AI limitations</p>
+    </section>
+    <section>
+      <h2>Ethical Considerations</h2>
+      <p>AI systems dealing with human futures must prioritize <strong>responsibility, explainability, and uncertainty handling</strong>.</p>
+      <p>This project strengthened my understanding of ethical AI development, particularly the importance of managing user expectations and avoiding deterministic claims about unpredictable human futures.</p>
+    </section>
+    <section>
+      <h2>Future Enhancements</h2>
+      <ul>
+        <li>ML models trained on anonymized behavioral datasets</li>
+        <li>Enhanced visual life timelines with interactive elements</li>
+        <li>Goal tracking with feedback loops and progress metrics</li>
+        <li>Privacy-first data pipelines with encryption</li>
+        <li>Integration with personal development frameworks</li>
+        <li>Community feature for shared scenario exploration</li>
+      </ul>
+    </section>
+  </main>
+  <footer>© 2025 Vinay Avala — AI Case Study</footer>
+</body>
+</html>
